@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main: #222;
+    --main-border : white;
+    --marker-color: red;
+    --text:white;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #111;
+    font-family: sans-serif;
+    color: white;
+}
+
+#drop-area {
+    border: 3px dashed #555;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#drop-area.hover {
+    border-color: #999;
+}
+
+#drop-area p {
+    color: #bbb;
+    text-align: center;
+}
+
+#image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    cursor: crosshair;
+}
+
+#preview {
+    max-width: none;
+    max-height: none;
+    display: block;
+    pointer-events: none;
+}
+
+.marker {
+    width: 8px;
+    height: 8px;
+    background: var(--marker-color);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#distance-label {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    pointer-events: none;
+    display: none;
+}
+
+#fileElem {
+    display: none;
+}
+
+.tools {
+    background-color: var(--main);
+    position: absolute;
+    z-index: 1000;
+}
+
+/* Button Styles */
+button {
+    background-color: #1e1e1e;
+    /* Dark background for button */
+    color: #ffffff;
+    /* Text color */
+    border: 1px solid #444444;
+    /* Border color */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Cursor changes to pointer */
+    transition: background-color 0.3s, border-color 0.3s;
+    /* Smooth transition */
+}
+
+/* Button Hover Styles */
+button:hover {
+    background-color: #444444;
+    /* Darker background on hover */
+}
+
+/* Button Focus Styles */
+button:focus {
+    outline: none;
+    /* Remove outline */
+    border-color: #6200ea;
+    /* Change border color on focus */
+}
+
+/* Button Disabled Styles */
+button:disabled {
+    background-color: #333333;
+    /* Even darker background when disabled */
+    color: #888888;
+    /* Greyed out text */
+    cursor: not-allowed;
+    /* Cursor changes to not-allowed */
+}
+
+/* Input Styles */
+input, textarea {
+    background: transparent; /* Dark background for input */
+    color: var(--text);          /* Text color */
+    border: 1px solid var(--main-border); /* Border color */
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;             /* Remove outline on focus */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    opacity: 0.5;
+}
+
+/* Input Focus Styles */
+input:focus, textarea:focus {
+    border-color: #6200ea; /* Change border color on focus */
+}

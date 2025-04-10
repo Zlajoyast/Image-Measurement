@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Image Measure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tools">
+        <input type="number" id="initial-scale">
+        <input type="number" id="final-scale">
+        <button id="create-scale" style="color:green">Create Scale</button>
+        <button id="measure-tool">Measure</button>
+        <button id="pan-tool" style="color:green">Pan</button>
+    </div>
+    <div id="drop-area">
+        <p>Arraste ou cole uma imagem (Ctrl+V)</p>
+        <div id="image-container">
+            <img id="preview" src="" alt="Pré-visualização" hidden>
+            <div id="distance-label"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
