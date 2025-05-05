@@ -5,6 +5,7 @@ const dropArea = document.getElementById('drop-area');
 
         const btnmeasureTool = document.getElementById("measure-tool");
         const btnpanTool = document.getElementById("pan-tool");
+        const btnclear = document.getElementById("clear");
 
         const btncreateScale = document.getElementById("create-scale");
 
@@ -13,7 +14,7 @@ const dropArea = document.getElementById('drop-area');
 
         let scale = 1;
         let markers = [];
-        let ismeasure = false;
+        let ismeasure = true;
         let createScale = true;
 
         let isPanning = false;
@@ -33,7 +34,12 @@ const dropArea = document.getElementById('drop-area');
             btnpanTool.style.color = "green";
             ismeasure = false;
         }
-
+        btnclear.onclick = () => {
+            initialScale.value = "";
+            finalScale.value = "";
+            createScale = true;
+            btncreateScale.style.color = "green";
+        }
         btncreateScale.onclick = () => {
             if (createScale) {
                 btncreateScale.style.color = "";
