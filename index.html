@@ -6,25 +6,38 @@
     <link rel="icon" href="icon.png" type="image/png">
     <title>Image Measure</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <div class="tools">
-        <input type="number" id="initial-scale">
-        <input type="number" id="final-scale">
-        <button id="create-scale" style="color:green">Create Scale</button>
-        <button id="measure-tool" style="color:green">Measure</button>
-        <button id="pan-tool">Pan</button>
-        <button id="clear">Clear</button>
+        <input type="number" id="initial-scale" title="Initial Scale">
+        <input type="number" id="final-scale" title="Final Scale">
+        <button id="create-scale" style="background-color:green" title="Create Scale">📐</button>
+        <button id="measure-tool" style="background-color:green" title="Measure Tool">📏 (Q)</button>
+        <button id="pan-tool" title="Pan Tool">🤚 (E)</button>
+        <button id="clear" title="Clear Settings">🧹 (R)</button>
+        <div class="hidden" id="pdf-settings">
+            <button id="previous-page" title="Previous Page">◀️</button>
+            <input type="number" id="pageindex" style="width: 75px;" value="1" title="PDF Page">
+            <button id="next-page" title="Next Page">▶️</button>
+             <input type="number" id="pdf-scale" style="width: 75px;" value="2" title="PDF Scale">
+        </div>
+        <div>
+            <button id="rotate-left" title="Create Scale">↻</button>
+            <button id="rotate-right" title="Create Scale">↺</button>
+        </div>
+
     </div>
     <div id="drop-area">
         <p>Arraste ou cole uma imagem (Ctrl+V)</p>
         <div id="image-container">
-            <img id="preview" src="" alt="Pré-visualização" hidden>
+            <img class="rotateimage" id="preview" src="" alt="Pré-visualização" hidden>
             <div id="distance-label"></div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 </body>
 
 </html>

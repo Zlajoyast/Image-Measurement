@@ -7,6 +7,7 @@
     --main-border : white;
     --marker-color: red;
     --text:white;
+    --rotationimage:0deg;
 }
 
 html,
@@ -86,6 +87,7 @@ body {
     background-color: var(--main);
     position: absolute;
     z-index: 1000;
+    display: flex;
 }
 
 /* Button Styles */
@@ -143,4 +145,19 @@ input, textarea {
 /* Input Focus Styles */
 input:focus, textarea:focus {
     border-color: #6200ea; /* Change border color on focus */
+}
+
+.hidden {
+    display: none;
+}
+.flex {
+    display: flex;
+}
+
+.rotateimage {
+    -webkit-transform: rotate(var(--rotationimage));
+    -moz-transform: rotate(var(--rotationimage));
+    -o-transform: rotate(var(--rotationimage));
+    -ms-transform: rotate(var(--rotationimage));
+    transform: rotate(var(--rotationimage));
 }
